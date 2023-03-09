@@ -7,10 +7,10 @@
 <h2>Ürün Güncelleme</h2>
 <br />
 
-@using(Html.BeginForm("ProductUpdate", "Product", FormMethod.Post))
-    {
+@using (Html.BeginForm("ProductUpdate", "Product", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
 
-    @Html.HiddenFor(x => x.ProductID)       
+    @Html.HiddenFor(x => x.ProductID)
     @Html.LabelFor(x => x.ProductName)
     @Html.TextBoxFor(x => x.ProductName, new { @class = "form-control" })
     <br />
@@ -32,11 +32,33 @@
     @Html.LabelFor(x => x.Category.CategoryID)
     @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.vle1, new { @class = "form-control" })
     <br />
+    <br />
     @Html.LabelFor(x => x.ProductImage)
-    @Html.TextBoxFor(x => x.ProductImage, new { @class = "form-control" })
+    <img src="@Model.ProductImage" />
+    <input hidden type="text" id="ProductImage" name="ProductImage" value="@Model.ProductImage" />
+    <input type="file" class="form-control" id="ProductImage" name="ProductImage"/>
+    <br />
+    <br />
+    @Html.LabelFor(x => x.ProductImage2)
+    <img src="@Model.ProductImage2" />
+    <input hidden type="text" id="ProductImage2" name="ProductImage2" value="@Model.ProductImage2" />
+    <input type="file" class="form-control" id="ProductImage2" name="ProductImage2" />
+    <br />
+    <br />
+    @Html.LabelFor(x => x.ProductImage3)
+    <img src="@Model.ProductImage3" />
+    <input hidden type="text" id="ProductImage3" name="ProductImage3" value="@Model.ProductImage3" />
+    <input type="file" class="form-control" id="ProductImage3" name="ProductImage3"/>
+    <br />
+    <br />
+    @Html.LabelFor(x => x.ProductImage4)
+    <img src="@Model.ProductImage4" />
+    <input hidden type="text" id="ProductImage4" name="ProductImage4" value="@Model.ProductImage4" />
+    <input type="file" class="form-control" id="ProductImage4" name="ProductImage4"/>
+    <br />
     <br />
     @Html.LabelFor(x => x.Status)
-    @Html.TextBoxFor(x => x.Status, new { @class = "form-control" })
+    <input class="form-control" id="Status" name="Status" type="text" value="True" />
     <br />
     <button class="btn btn-warning">Güncelle</button>
 }
