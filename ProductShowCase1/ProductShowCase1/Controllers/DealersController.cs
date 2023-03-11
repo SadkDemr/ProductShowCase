@@ -12,11 +12,15 @@ namespace ProductShowCase1.Controllers
     {
         Context c = new Context();
         // GET: Dealers
+
+        [Authorize]
         public ActionResult Index()
         {
             var value = c.Dealers.ToList();
             return View(value);
         }
+
+        [Authorize]
         [HttpGet]
         public ActionResult DealersAdd()
         {
@@ -32,6 +36,7 @@ namespace ProductShowCase1.Controllers
             return View();
         }
 
+        [Authorize]
         [HttpPost]
         public ActionResult DealersAdd(Dealers d)
         {
@@ -41,6 +46,8 @@ namespace ProductShowCase1.Controllers
             return RedirectToAction("Index");
         }
 
+
+        [Authorize]
         public ActionResult DealersRemove(int ID)
         {
             var bayi = c.Dealers.Find(ID);
@@ -49,6 +56,7 @@ namespace ProductShowCase1.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize]
         public ActionResult DealersBring(int ID)
         {
             List<SelectListItem> city = new List<SelectListItem>();
@@ -63,6 +71,8 @@ namespace ProductShowCase1.Controllers
             var dealers = c.Dealers.Find(ID);
             return View("DealersBring", dealers);
         }
+
+        [Authorize]
         public ActionResult DealersUpdate(Dealers d)
         {
             var bayi = c.Dealers.Find(d.DealersID);
@@ -75,6 +85,7 @@ namespace ProductShowCase1.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize]
         public ActionResult DealersList()
         {
             return View();

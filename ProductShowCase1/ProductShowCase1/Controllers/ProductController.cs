@@ -11,11 +11,15 @@ namespace ProductShowCase1.Controllers
     {
         // GET: Product
         Context c = new Context();
+
+        [Authorize]
         public ActionResult Index()
         {
             var products = c.Products.Where(x => x.Status == true).ToList();
             return View(products);
         }
+
+        [Authorize]
         [HttpGet]
         public ActionResult ProductAdd()
         {
@@ -28,6 +32,8 @@ namespace ProductShowCase1.Controllers
             ViewBag.vle1 = value1;
             return View();
         }
+
+        [Authorize]
         [HttpPost]
         public ActionResult ProductAdd(Product p)
         {
@@ -67,6 +73,8 @@ namespace ProductShowCase1.Controllers
             c.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        [Authorize]
         public ActionResult ProductRemove(int id)
         {
             var value = c.Products.Find(id);
@@ -74,6 +82,8 @@ namespace ProductShowCase1.Controllers
             c.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        [Authorize]
         public ActionResult ProductBring(int id)
         {
             List<SelectListItem> value1 = (from x in c.Categories.ToList()
@@ -86,6 +96,8 @@ namespace ProductShowCase1.Controllers
             var productValue = c.Products.Find(id);
             return View("ProductBring", productValue);
         }
+
+        [Authorize]
         public ActionResult ProductUpdate(Product p, 
             HttpPostedFileBase ProductImage, HttpPostedFileBase ProductImage2, HttpPostedFileBase ProductImage3, HttpPostedFileBase ProductImage4)
         {

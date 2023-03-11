@@ -11,18 +11,22 @@ namespace ProductShowCase1.Controllers
     {
         // GET: Category
         Context c = new Context();
+
+        [Authorize]
         public ActionResult Index()
         {
             var values = c.Categories.ToList();
             return View(values);
         }
 
+        [Authorize]
         [HttpGet]
         public ActionResult CategoryAdd()
         {
             return View();
         }
 
+        [Authorize]
         [HttpPost]
         public ActionResult CategoryAdd(Category k)
         {
@@ -31,6 +35,8 @@ namespace ProductShowCase1.Controllers
 
             return RedirectToAction("Index");
         }
+
+        [Authorize]
         public ActionResult CategoryRemove(int ID)
         {
             var kate = c.Categories.Find(ID);
@@ -39,11 +45,14 @@ namespace ProductShowCase1.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize]
         public ActionResult CategoryBring(int ID)
         {
             var category = c.Categories.Find(ID);
             return View("CategoryBring", category);
         }
+
+        [Authorize]
         public ActionResult CategoryUpdate(Category k)
         {
             var ktgr = c.Categories.Find(k.CategoryID);
