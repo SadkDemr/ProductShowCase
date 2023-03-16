@@ -23,7 +23,7 @@
     @Html.DropDownListFor(x => x.DealersCity, (List<SelectListItem>)ViewBag.vle1, new { @class = "form-control" })
     <br />
     @Html.LabelFor(x => x.DealersAdress)
-    @Html.TextBoxFor(x => x.DealersAdress, new { @class = "form-control" })
+    @Html.TextAreaFor(x => x.DealersAdress, new { @class = "form-control" })
     <br />
     <button class="btn btn-warning">Güncelle</button>
 }

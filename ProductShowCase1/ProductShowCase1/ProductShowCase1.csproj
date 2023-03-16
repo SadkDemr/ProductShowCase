@@ -381,7 +381,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Image\" />
     <Folder Include="Views\Login\" />
   </ItemGroup>
   <ItemGroup>
