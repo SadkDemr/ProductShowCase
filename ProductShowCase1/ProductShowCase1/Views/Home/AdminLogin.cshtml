@@ -1,0 +1,18 @@
+﻿@using ProductShowCase1.Models.Classes;
+@model List<Admin>
+@{
+    Layout = null;
+}
+
+<link rel="stylesheet" href="~/ProductCSS/assets/css/login.css">
+<div class="login">
+    @using (Html.BeginForm("AdminLogin", "Home", FormMethod.Post))
+    {
+        <input type="text" class="AdminUserName" name="AdminUserName" placeholder="AdminUserName" id="AdminUserName" required="">
+        <input type="password" class="AdminPass" name="AdminPass" placeholder="AdminPass" id="AdminPass" required="">
+        <input type="submit" value="Sign In">
+    }
+</div>
+<div class="shadow"></div>
+
+

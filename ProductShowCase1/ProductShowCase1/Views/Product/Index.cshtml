@@ -1,0 +1,54 @@
+﻿@using ProductShowCase1.Models.Classes;
+@model List<Product>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>Ürün Adı</th>
+        <th>Marka</th>
+        <th>Model N0</th>
+        <th>Alış Fiyatı</th>
+        <th>Satış Fiyatı</th>
+        <th>Ürün Özellikleri</th>
+        <th>Kategori</th>
+        <th>Görsel 1</th>
+        <th>Görsel 2</th>
+        <th>Görsel 3</th>
+        <th>Görsel 4</th>
+        <th>Güncelle</th>
+        <th>Sil</th>
+    </tr>
+    @foreach (var u in Model)
+    {
+        <tr>
+            <td>
+                @u.ProductName
+            </td>
+            <td>@u.Brand</td>
+            <td>@u.Stock</td>
+            <td>@u.PurchasePrice</td>
+            <td>@u.SalePrice</td>
+            <td>@u.ProductFeature</td>
+            <td>@u.Category.CategoryName</td>
+            <td>
+                <img src="@u.ProductImage" style="width:100px; height:100px;"/>
+            </td>
+            <td>
+                <img src="@u.ProductImage2" style="width:100px; height:100px;" />
+            </td>
+            <td>
+                <img src="@u.ProductImage3" style="width:100px; height:100px;" />
+            </td>
+            <td>
+                <img src="@u.ProductImage4" style="width:100px; height:100px;" />
+            </td>
+            <td><a href="/Product/ProductBring/@u.ProductID" class="btn btn-success">Güncelle</a></td>
+            <td><a href="/Product/ProductRemove/@u.ProductID" class="btn btn-danger">Sil</a></td>
+        </tr>
+    }
+</table>
+<a href="/Product/ProductAdd" class="btn btn-primary">Yeni Ürün Ekle</a>
+
