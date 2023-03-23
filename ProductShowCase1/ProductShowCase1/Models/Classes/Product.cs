@@ -22,8 +22,8 @@ namespace ProductShowCase1.Models.Classes
         [StringLength(50)]
         public string Brand { get; set; }
 
-        [Display(Name = "Stok")]
-        public short Stock { get; set; }
+        [Display(Name = "Model No")]
+        public string Stock { get; set; }
 
         [Display(Name = "Alış Fiyatı")]
         public decimal PurchasePrice { get; set; }

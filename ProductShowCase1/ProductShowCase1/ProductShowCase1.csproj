@@ -178,6 +178,10 @@
     <Content Include="ProductCSS\assets\css\slick.min.css" />
     <Content Include="ProductCSS\assets\css\templatemo.css" />
     <Content Include="ProductCSS\assets\css\templatemo.min.css" />
+    <Content Include="ProductCSS\assets\img\1görsel.png" />
+    <Content Include="ProductCSS\assets\img\2görsel.png" />
+    <Content Include="ProductCSS\assets\img\3görsel.png" />
+    <Content Include="ProductCSS\assets\img\4görsel.png" />
     <Content Include="ProductCSS\assets\img\about-hero.svg" />
     <Content Include="ProductCSS\assets\img\ajax-loader.gif" />
     <Content Include="ProductCSS\assets\img\apple-icon.png" />
@@ -195,6 +199,7 @@
     <Content Include="ProductCSS\assets\img\feature_prod_01.jpg" />
     <Content Include="ProductCSS\assets\img\feature_prod_02.jpg" />
     <Content Include="ProductCSS\assets\img\feature_prod_03.jpg" />
+    <Content Include="ProductCSS\assets\img\mblogo.png" />
     <Content Include="ProductCSS\assets\img\product_single_01.jpg" />
     <Content Include="ProductCSS\assets\img\product_single_02.jpg" />
     <Content Include="ProductCSS\assets\img\product_single_03.jpg" />
@@ -380,7 +385,9 @@
     <Content Include="Views\Home\DealersList.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Browsers\" />
     <Folder Include="App_Data\" />
+    <Folder Include="Image\" />
     <Folder Include="Views\Login\" />
   </ItemGroup>
   <ItemGroup>
