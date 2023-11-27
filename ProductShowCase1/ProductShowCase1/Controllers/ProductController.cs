@@ -37,7 +37,7 @@ namespace ProductShowCase1.Controllers
         [HttpPost]
         public ActionResult ProductAdd(Product p)
         {
-            if(Request.Files.Count > 0)
+            if (Request.Files.Count > 0 && Request.Files[0] != null && Request.Files[0].ContentLength > 0)
             {
                 string dosyaadi = Path.GetFileName(Request.Files[0].FileName);
                 string uzanti = Path.GetExtension(Request.Files[0].FileName);
@@ -45,7 +45,7 @@ namespace ProductShowCase1.Controllers
                 Request.Files[0].SaveAs(Server.MapPath(yol));
                 p.ProductImage = "/Image/" + dosyaadi + uzanti;
             }
-            if (Request.Files.Count > 0)
+            if (Request.Files.Count > 0 && Request.Files[1] != null && Request.Files[1].ContentLength > 0)
             {
                 string dosyaadi2 = Path.GetFileName(Request.Files[1].FileName);
                 string uzanti = Path.GetExtension(Request.Files[1].FileName);
@@ -53,7 +53,7 @@ namespace ProductShowCase1.Controllers
                 Request.Files[1].SaveAs(Server.MapPath(yol));
                 p.ProductImage2 = "/Image/" + dosyaadi2 + uzanti;
             }
-            if (Request.Files.Count > 0)
+            if (Request.Files.Count > 0 && Request.Files[2] != null && Request.Files[2].ContentLength > 0)
             {
                 string dosyaadi3 = Path.GetFileName(Request.Files[2].FileName);
                 string uzanti = Path.GetExtension(Request.Files[2].FileName);
@@ -61,7 +61,7 @@ namespace ProductShowCase1.Controllers
                 Request.Files[2].SaveAs(Server.MapPath(yol));
                 p.ProductImage3 = "/Image/" + dosyaadi3 + uzanti;
             }
-            if (Request.Files.Count > 0)
+            if (Request.Files.Count > 0 && Request.Files[3] != null && Request.Files[3].ContentLength > 0)
             {
                 string dosyaadi4 = Path.GetFileName(Request.Files[3].FileName);
                 string uzanti = Path.GetExtension(Request.Files[3].FileName);

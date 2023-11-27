@@ -15,7 +15,9 @@ namespace ProductShowCase1.Controllers
         Context c = new Context();
         public ActionResult Index()
         {
-            return View();
+            Class1 cs = new Class1();
+            cs.Kategoriler = c.Categories.ToList();
+            return View(cs);
         }
 
         public ActionResult About()

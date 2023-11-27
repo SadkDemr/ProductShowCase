@@ -47,8 +47,7 @@
     <input type="file" name="ProductImage4" />
     <br />
     <br />
-    @Html.LabelFor(x => x.Status)
-    @Html.TextBoxFor(x => x.Status, new { @class = "form-control" })
+    @Html.HiddenFor(x => x.Status, new { @Value = "True" })
     <br />
     <button class="btn btn-primary">Kaydet</button>
 </form>

@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\ProductShowCase1",
+    "\\ProductShowCase1\\Controllers",
+    "\\ProductShowCase1\\Views",
+    "\\ProductShowCase1\\Views\\Home"
   ],
-  "SelectedNode": "\\ProductShowCase1.sln",
+  "SelectedNode": "\\ProductShowCase1\\Controllers\\DealersController.cs",
   "PreviewInSolutionExplorer": false
 }
